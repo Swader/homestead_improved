@@ -5,7 +5,7 @@ cpus: 1
 provider: virtualbox
 
 folders:
-    - map: .
+    - map: D:/VM/vagrant_boxes/homestead/hi_nino/hi_newtest
       to: /home/vagrant/Code
 
 sites:

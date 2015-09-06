@@ -10,7 +10,10 @@ then
 elif [ -n "$COMSPEC" -a -x "$COMSPEC" ]
 then 
 	var=$PWD 
-	sub=${var:1:1} 
-	workdir=${var/$sub/":/"};
+	sub=${var:0:1} 
+	workdir=${var/$sub/""};
+
+	sub=${workdir:1:1}
+	workdir=${workdir/$sub/":/"}
 	sed -i "s@map\: \.@map\: $workdir@g" Homestead.yaml
 fi
