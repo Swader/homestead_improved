@@ -10,7 +10,7 @@ folders:
 
 sites:
     - map: homestead.app
-      to: /home/vagrant/Code/Laravel/public
+      to: /home/vagrant/Code/Project/public
 
 databases:
     - homestead
