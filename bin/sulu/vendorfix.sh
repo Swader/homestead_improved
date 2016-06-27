@@ -18,7 +18,7 @@ else
 fi
 
 # Change app/autoload.php's assumption of where the vendor folder is
-LOADER="\$loader = require __DIR__ . '/../vendor/autoload.php';"
+LOADER="\$loader = require __DIR__.'/../vendor/autoload.php';"
 NEWLOADER="/*\n\[app/autoload.php fix\] Commented out by bin/sulu/vendorfix.sh\n\$loader = require __DIR__ . '/../vendor/autoload.php';\n*/\n\$loader = require \"$VENDORPATH/autoload.php\";"
 
 if [[ -z $(grep '\[app/autoload.php fix\]' app/autoload.php) ]]; then
