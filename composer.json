@@ -1,8 +1,8 @@
 {
     "name": "Homestead Improved",
-    "description": "See here: http://www.sitepoint.com/quick-tip-get-homestead-vagrant-vm-running/“,
+    "description": "See here: http://www.sitepoint.com/quick-tip-get-homestead-vagrant-vm-running/",
     "require": {
-        "php": ">=7”,
+        "php": ">=7",
         "symfony/console": "~2.0",
         "symfony/process": "~2.0"
     },
