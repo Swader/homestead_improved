@@ -4,7 +4,8 @@
     "require": {
         "php": ">=7",
         "symfony/console": "~2.0",
-        "symfony/process": "~2.0"
+        "symfony/process": "~2.0",
+        "symfony/yaml": "^3.3"
     },
     "license": "MIT",
     "authors": [
