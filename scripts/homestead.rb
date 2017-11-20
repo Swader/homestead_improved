@@ -135,6 +135,8 @@ class Homestead
             mount_opts = folder["mount_options"] ? folder["mount_options"] : ['actimeo=1', 'nolock']
         elsif (folder["type"] == "smb")
             mount_opts = folder["mount_options"] ? folder["mount_options"] : ['vers=3.02', 'mfsymlinks']
+        elsif (folder["type"] == "sshfs")
+            mount_opts = folder["mount_options"] ? folder["mount_options"] : ['nonempty']
         end
 
         # For b/w compatibility keep separate 'mount_opts', but merge with options
@@ -146,7 +148,7 @@ class Homestead
         config.vm.synced_folder folder["map"], folder["to"], type: folder["type"] ||= nil, **options
 
         # Bindfs support to fix shared folder (NFS) permission issue on Mac
-        if Vagrant.has_plugin?("vagrant-bindfs")
+        if (folder["type"] == "nfs" && Vagrant.has_plugin?("vagrant-bindfs"))
           config.vm.synced_folder folder["map"], "/mnt/vagrant", id: "vagrant", type: 'nfs'
           config.bindfs.bind_folder "/mnt/vagrant", folder["to"], owner: "vagrant", group: "vagrant", perms: "u=rwX:g=rwX:o=rD", 'create-as-user': true, 'create-with-perms': "u=rwX:g=rwX:o=rD", 'chown-ignore': true, 'chgrp-ignore': true, 'chmod-ignore': true, 'o': "nonempty"
         end
