@@ -5,20 +5,13 @@ cpus: 1
 provider: virtualbox
 
 folders:
-    - map: /Users/swader/vagrant_boxes/homestead/hi_cryptocal
+    - map: .
       to: /home/vagrant/Code
       type: sshfs
 
 sites:
     - map: homestead.test
       to: /home/vagrant/Code/Project/public
-
-    - map: homestead2.test
-      to: /home/vagrant/Code/broker/public
-      type: symfony4
-
-    - map: homestead3.test
-      to: /home/vagrant/Code/m4c/public
 
 databases:
     - homestead
