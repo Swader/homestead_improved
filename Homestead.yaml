@@ -7,7 +7,6 @@ provider: virtualbox
 folders:
     - map: .
       to: /home/vagrant/Code
-      type: sshfs
 
 sites:
     - map: homestead.test
